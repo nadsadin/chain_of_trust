@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="material-style layout-navbar-fixed">
+<html lang="ru" class="material-style layout-navbar-fixed">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1">
@@ -34,6 +34,8 @@
 
   <!-- `perfect-scrollbar` library required by SideNav plugin -->
   <link rel="stylesheet" href="libs/perfect-scrollbar/perfect-scrollbar.css">
+  <link rel="stylesheet" href="libs/smartwizard/smartwizard.css">
+  <link rel="stylesheet" href="libs/select2/select2.css">
 
 </head>
 <body>
@@ -46,9 +48,6 @@
       <div class="app-brand demo">
         <a href="#" class="app-brand-logo">
           <img src="img/logo.png" alt="">
-        </a>
-        <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
-          <i class="ion ion-md-menu align-middle"></i>
         </a>
       </div>
       <div class="sidenav-divider mt-0"></div>
@@ -242,77 +241,113 @@
 
         <!-- Page content -->
         <div class="container-fluid flex-grow-1 container-p-y">
+          <form id="smartwizard-form" class="smartwizard-vertical-left">
+            <ul>
+              <li><a href="#smartwizard-4-step-1" class="text-nowrap mb-3">
+                <span class="sw-done-icon ion ion-md-checkmark"></span>
+                <span class="sw-icon ion ion-ios-keypad"></span>
+                <div class="text-muted small">Первый шаг</div>
+                О компании
+              </a></li>
+              <li><a href="#smartwizard-4-step-2" class="text-nowrap mb-3">
+                <span class="sw-done-icon ion ion-md-checkmark"></span>
+                <span class="sw-icon ion ion-ios-color-wand"></span>
+                <div class="text-muted small">Второй шаг</div>
+                Администратор компании
+              </a></li>
+              <li><a href="#smartwizard-4-step-3" class="text-nowrap mb-3">
+                <span class="sw-done-icon ion ion-md-checkmark"></span>
+                <span class="sw-icon ion ion-md-copy"></span>
+                <div class="text-muted small">Третий шаг</div>
+                Контакты
+              </a></li>
+            </ul>
 
+            <div class="mb-3">
+              <div id="smartwizard-4-step-1" class="card animated fadeIn mb-3">
+                <div class="card-body">
+                  <div id="company_info"><input type="hidden" name="custom_registration[title]"
+                                                id="custom_registration_title" value="ПАО СБЕРБАНК">
+                    <div class="text-muted py-2"><strong>Название</strong>: ПАО СБЕРБАНК</div>
+                    <input type="hidden" name="custom_registration[legal_address]"
+                           id="custom_registration_legal_address"
+                           value="117312, г Москва, Академический р-н, ул Вавилова, д 19">
+                    <div class="text-muted py-2"><strong>Юридический адрес</strong>: 117312, г Москва, Академический
+                      р-н, ул Вавилова, д 19
+                    </div>
+                    <input type="hidden" name="custom_registration[inn]" id="custom_registration_inn"
+                           value="7707083893">
+                    <div class="text-muted py-2"><strong>ИНН</strong>: 7707083893</div>
+                    <input type="hidden" name="custom_registration[ogrn]" id="custom_registration_ogrn"
+                           value="1027700132195">
+                    <div class="text-muted py-2"><strong>ОГРН</strong>: 1027700132195</div>
+                    <input type="hidden" name="custom_registration[kpp]" id="custom_registration_kpp" value="773601001">
+                    <div class="text-muted py-2"><strong>КПП</strong>: 773601001</div>
+                    <input type="hidden" name="custom_registration[ceo]" id="custom_registration_ceo"
+                           value="Греф Герман Оскарович">
+                    <div class="text-muted py-2"><strong>Генеральный директор</strong>: Греф Герман Оскарович</div>
+                  </div>
+                  <div class="form-group">
+                    <label>Описание <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Логотип <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="file" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Дата основания <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Банк <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Корреспондентский счет <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                </div>
+              </div>
+              <div id="smartwizard-4-step-2" class="card animated fadeIn mb-3">
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Имя <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Фамилия <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Город <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="text" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Роль <span class="text-danger">*</span></label>
+                    <select class="select2 form-control required" style="width: 100%" data-allow-clear="true">
+                      <option value="1">Предприниматель</option>
+                      <option value="2">Инвестор</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Аватар <span class="text-danger">*</span></label>
+                    <input name="wizard-userName" type="file" class="form-control required">
+                  </div>
+                  <div class="form-group">
+                    <label>Биография или о пользователе <span class="text-danger">*</span></label>
+                    <textarea  class="form-control required"></textarea>
+                  </div>
 
-
-          <h2>Text</h2>
-          <div>Default text</div>
-          <div class="text-muted">.text-muted</div>
-          <div class="text-lighter">.text-lighter</div>
-          <a href="#" class="text-primary">Primary link</a>
-          <h2>Buttons</h2>
-          <div>
-            <div class="btn btn-primary">Primary</div>
-          </div>
-
-          <p class="mt-4">Рейтинг</p>
-
-          <div class="ui-stars text-muted">
-            <div class="ui-star filled">
-              <i class="ion ion-md-star"></i>
-              <i class="ion ion-md-star"></i>
-            </div>
-            <div  class="ui-star filled">
-              <i class="ion ion-md-star"></i>
-              <i class="ion ion-md-star"></i>
-            </div>
-            <div class="ui-star filled">
-              <i class="ion ion-md-star"></i>
-              <i class="ion ion-md-star"></i>
-            </div>
-            <div class="ui-star half-filled">
-              <i class="ion ion-md-star"></i>
-              <i class="ion ion-md-star"></i>
-            </div>
-            <div class="ui-star">
-              <i class="ion ion-md-star"></i>
-              <i class="ion ion-md-star"></i>
-            </div>
-          </div>
-
-          <p class="mt-4">Рейтинг для формы</p>
-          <div class="form-group">
-            <label>Рейтинг <span class="text-danger">*</span></label>
-            <div class="form-group">
-              <div class="ui-stars text-muted form-stars">
-                <input type="radio" class="hidden" id="rating_star_5">
-                <label for="rating_star_5" class="ui-star">
-                  <i class="ion ion-md-star"></i>
-                  <i class="ion ion-md-star"></i>
-                </label>
-                <input type="radio" class="hidden" id="rating_star_4">
-                <label for="rating_star_4" class="ui-star">
-                  <i class="ion ion-md-star"></i>
-                  <i class="ion ion-md-star"></i>
-                </label>
-                <input type="radio" class="hidden" id="rating_star_3">
-                <label for="rating_star_3" class="ui-star">
-                  <i class="ion ion-md-star"></i>
-                  <i class="ion ion-md-star"></i>
-                </label>
-                <input type="radio" class="hidden" id="rating_star_2">
-                <label for="rating_star_2" class="ui-star">
-                  <i class="ion ion-md-star"></i>
-                  <i class="ion ion-md-star"></i>
-                </label>
-                <input type="radio" class="hidden" id="rating_star_1">
-                <label for="rating_star_1" class="ui-star">
-                  <i class="ion ion-md-star"></i>
-                  <i class="ion ion-md-star"></i>
-                </label>
+                </div>
+              </div>
+              <div id="smartwizard-4-step-3" class="card animated fadeIn mb-3">
+                <div class="card-body">
+                  Step Content 3
+                </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
         <!-- / Page content -->
 
@@ -343,6 +378,103 @@
 
 <!-- `perfect-scrollbar` library required by SideNav plugin -->
 <script src="libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="libs/smartwizard/smartwizard.js"></script>
+<script src="libs/validate/validate.js"></script>
+<script src="libs/select2/select2.js"></script>
+<!-- Javascript -->
+<script>
+
+    $(function() {
+        jQuery.extend(jQuery.validator.messages, {
+            required: "Это поле необходимо заполнить",
+            remote: "Исправьте это поле чтобы продолжить",
+            email: "Введите правильный email адрес.",
+            url: "Введите верный URL.",
+            date: "Введите правильную дату.",
+            dateISO: "Введите правильную дату (ISO).",
+            number: "Введите число.",
+            digits: "Введите только цифры.",
+            creditcard: "Введите правильный номер вашей кредитной карты.",
+            equalTo: "Повторите ввод значения еще раз.",
+            accept: "Пожалуйста, введите значение с правильным расширением.",
+            maxlength: jQuery.validator.format("Нельзя вводить более {0} символов."),
+            minlength: jQuery.validator.format("Должно быть не менее {0} символов."),
+            rangelength: jQuery.validator.format("Введите от {0} до {1} символов."),
+            range: jQuery.validator.format("Введите число от {0} до {1}."),
+            max: jQuery.validator.format("Введите число меньше или равное {0}."),
+            min: jQuery.validator.format("Введите число больше или равное {0}.")
+        });
+        var $btnFinish, $form;
+        $form = $('#smartwizard-form');
+        $btnFinish = $('<button class="mr-2 btn-finish btn btn-primary d-none" type="button">Сохранить</button>');
+        $form.validate({
+            errorPlacement: function(error, element) {
+                $(element).parents('.form-group').append(error.addClass('invalid-feedback small d-block'));
+            },
+            highlight: function(element) {
+                $(element).addClass('is-invalid');
+            },
+            unhighlight: function(element) {
+                $(element).removeClass('is-invalid');
+            },
+            messages: {required: 'Это обязательное поле'},
+            rules: {
+                'wizard-confirm': {
+                    equalTo: 'input[name="wizard-password"]'
+                }
+            }
+        });
+        $form.smartWizard({
+            autoAdjustHeight: false,
+            backButtonSupport: false,
+            useURLhash: false,
+            anchorSettings: {
+                removeDoneStepOnNavigateBack: true
+            },
+            lang: {
+                next: 'Далее',
+                previous: 'Назад'
+            },
+            showStepURLhash: false,
+            toolbarSettings: {
+                toolbarExtraButtons: [$btnFinish]
+            }
+        }).on('leaveStep', function(e, anchorObject, stepNumber, stepDirection) {
+            if (stepDirection === 'forward') {
+                return $form.valid();
+            }
+            return true;
+        }).on('showStep', function(e, anchorObject, stepNumber, stepDirection) {
+            var $btn;
+            $btn = $form.find('.btn-finish');
+            if (stepNumber === $('.step-anchor li').length - 1) {
+                $btn.removeClass('d-none');
+            } else {
+                $btn.addClass('d-none');
+            }
+        });
+        $form.find('.btn-finish').on('click', function() {
+            if (!$form.valid()) {
+                return;
+            }
+            return $form.submit();
+        });
+
+        $('#smartwizard-form .sw-toolbar').appendTo($('#smartwizard-form .sw-container'));
+
+
+        $('.select2').each(function() {
+            $(this)
+                .wrap('<div class="position-relative"></div>')
+                .select2({
+                    placeholder: 'Выберите значения',
+                    dropdownParent: $(this).parent(),
+                    language: 'ru'
+                });
+        })
+    });
+</script>
+<!-- / Javascript -->
 
 </body>
 </html>
