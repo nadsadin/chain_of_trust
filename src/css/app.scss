@@ -301,3 +301,45 @@ html:not(.material-style) .material-style-only {
 .layout-example-block-3 .layout-example-block-footer {
   background: #e6514a;
 }
+
+.form-stars{
+  .ui-star{
+    float: right;
+  }
+  &:not(:checked) > .ui-star:hover> *:first-child, &:not(:checked) > .ui-star:hover ~ .ui-star> *:first-child, &> input:checked ~ .ui-star> *:first-child{
+    display: block;
+  }
+
+}
+
+input[type="radio"].hidden,input[type="checkbox"].hidden{
+  display: inline;
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.ui-stars.text-muted .ui-star > *:first-child{
+  color: #444444;
+}
+.ui-stars.text-muted .ui-star > *:last-child{
+  color: #D4D4D4;
+}
+
+.ui-stars.text-primary .ui-star > *:first-child{
+  color: $primary-color;
+}
+.ui-stars.text-primary .ui-star > *:last-child{
+  color: #ffffff;
+}
+.ui-stars.large{
+  .ui-star{
+    width: 28px;
+    height: 28px;
+    & > *, & > *::before, & > *::after{
+      font-size: 26px;
+    }
+  }
+}
