@@ -343,3 +343,28 @@ input[type="radio"].hidden,input[type="checkbox"].hidden{
     }
   }
 }
+
+.company-hero{
+  min-height: 400px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 110px;
+  .company-title{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 100%;
+  }
+  .breadcrumb-item + .breadcrumb-item::before{
+    content: "-";
+  }
+  .breadcrumb-item, .breadcrumb-item a, .breadcrumb-item.active{
+    color: #fff;
+  }
+  .breadcrumb-item:hover, .breadcrumb-item a:hover{
+    color: #a3a4a6;
+  }
+}
