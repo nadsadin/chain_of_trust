@@ -17,7 +17,7 @@
     "postinstall": "npm rebuild node-sass"
   },
   "dependencies": {
-    "@claviska/jquery-minicolors": "~2.2.6",
+    "@claviska/jquery-minicolors": "~2.3.6",
     "@flowjs/flow.js": "~2.13.0",
     "@fortawesome/fontawesome-free-webfonts": "~1.0.9",
     "animate.css": "~3.6.1",
